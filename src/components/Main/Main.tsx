@@ -1,47 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styles from './Main.module.scss';
-import Chart from 'chart.js/auto';
+import PieChart from '../Charts/PieChart/PieChart';
+import BarChart from '../Charts/BarChart/BarChart';
+import Separator from '../Separator/Separator';
+import Maps from '../Maps/Maps';
 
 function Main() {
-    const chartRef = useRef<HTMLCanvasElement>(null); // Strongly type the ref with HTMLCanvasElement
-
-    const data = {
-        labels: ['Ocupat', 'Lliure'],
-        datasets: [{
-            label: '',
-            data: [35, 15],
-            backgroundColor: [
-                'rgb(204, 0, 0)',
-                'rgb(0, 153, 0)'
-            ],
-            hoverOffset: 4
-        }]
-    };
-
-    useEffect(() => {
-        if (chartRef.current) {
-            const ctx = chartRef.current.getContext('2d');
-            if (ctx) {
-                const pieChart = new Chart(ctx, {
-                    type: 'pie',
-                    data: data,
-                    options: {
-                        responsive: true,
-                        plugins: {
-                            legend: {
-                                position: 'top'
-                            }
-                        }
-                    }
-
-                });
-
-                return () => {
-                    pieChart.destroy();
-                };
-            }
-        }
-    }, []);
 
     return (
         <div className={styles.Main}>
@@ -65,11 +29,13 @@ function Main() {
             </div>
 
             <div className={styles.chart}>
-                <canvas className={styles.PieChart} ref={chartRef} />
+                <PieChart />
+                <BarChart />
             </div>
+            <Separator />
 
             <div className={styles.map}>
-                <p>Ubicación:</p>
+                <Maps />
             </div>
         </div>
     );

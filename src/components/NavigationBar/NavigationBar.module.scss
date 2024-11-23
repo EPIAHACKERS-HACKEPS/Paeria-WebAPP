@@ -1,12 +1,12 @@
 // NavigationBar.module.scss
 .navBar {
-    background-color: white;
+    background-color: #181a1b;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #c8c3bc;
 }
 .home {
     display: flex;
@@ -15,19 +15,19 @@
 .navLink {
     height: 100%;
     float: left;
-    color: black;
+    color: #c8c3bc;
     text-align: center;
     padding: 10px 10px;
     text-decoration: none;
     font-size: 17px;
 
-    &:hover {
-        background-color: #ddd;
-        color: black;
-    }
+    // &:hover {
+    //     background-color: #ddd;
+    //     color: black;
+    // }
 
-    &:active {
-        background-color: #4caf50;
-        color: white;
-    }
+    // &:active {
+    //     background-color: #4caf50;
+    //     color: white;
+    // }
 }
