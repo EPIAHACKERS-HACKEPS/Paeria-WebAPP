@@ -1,24 +1,19 @@
 import React from 'react'
 import './App.css'
-import NavigationBar from "./components/NavigationBar/NavigationBar";
-import Main from './components/Main/Main';
-import History from './components/History/History';
-import Prediction from './components/Prediction/Prediction';
+import NavigationBar from './components/NavigationBar/NavigationBar'
+import Main from './components/Main/Main'
+import History from './components/History/History'
+import Prediction from './components/Prediction/Prediction'
 
 
 function App() {
-
-  // const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div className='Main'>
-        <NavigationBar />
-        <Main />
-        <History />
-        <Prediction />
-      </div>
-    </>
+    <div className="Main">
+      <NavigationBar/>
+      <Main/>
+      <History/>
+      <Prediction/>
+    </div>
   )
 }
 
