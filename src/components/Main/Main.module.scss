@@ -1,0 +1,83 @@
+.Main {
+    color: #333;
+    background-color: #fff; // Light background
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: flex;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    justify-content: space-around;
+    border-radius: 10px;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f9f9f9;
+    width: 100%;
+
+    .occupied {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+        z-index: 10;
+    }
+}
+
+.label {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.value {
+    margin: 10px 0px 20px 0px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+}
+.chart {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.map {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .stat {
+        flex-basis: 100%; // Each stat takes full width on small devices
+    }
+
+    .value {
+        font-size: 24px; // Smaller font size for smaller screens
+    }
+    .label {
+        font-size: 13px; // Smaller font size for smaller screens
+    }
+    .chart {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+    }
+}
