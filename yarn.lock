@@ -5,6 +5,15 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
+"@babel/runtime@npm:^7.23.2":
+  version: 7.26.0
+  resolution: "@babel/runtime@npm:7.26.0"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: 10c0/12c01357e0345f89f4f7e8c0e81921f2a3e3e101f06e8eaa18a382b517376520cd2fa8c237726eb094dab25532855df28a7baaf1c26342b52782f6936b07c287
+  languageName: node
+  linkType: hard
+
 "@capacitor/android@npm:^6.2.0":
   version: 6.2.0
   resolution: "@capacitor/android@npm:6.2.0"
@@ -534,6 +543,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@redux-devtools/extension@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@redux-devtools/extension@npm:3.3.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.23.2"
+    immutable: "npm:^4.3.4"
+  peerDependencies:
+    redux: ^3.1.0 || ^4.0.0 || ^5.0.0
+  checksum: 10c0/a582d26687fdcbb9fc98181a6a28c7e286a6a74f35f5bba181b9b8b766029d34754bd8f8e60acaa757a34aca385056783d2efb95f943282f2ee66039931c942f
+  languageName: node
+  linkType: hard
+
 "@rollup/rollup-android-arm-eabi@npm:4.27.4":
   version: 4.27.4
   resolution: "@rollup/rollup-android-arm-eabi@npm:4.27.4"
@@ -854,6 +875,13 @@ __metadata:
   version: 4.0.0
   resolution: "@types/slice-ansi@npm:4.0.0"
   checksum: 10c0/5ea517c6739652029ac13810fe8b3b360e7cca4b2fcf99fc879964c2a4f12f8e6b559dacda5b9f016415f0c14017fd9e2b614ecfe0eb056d68e16b3a04cc48bf
+  languageName: node
+  linkType: hard
+
+"@types/use-sync-external-store@npm:^0.0.3":
+  version: 0.0.3
+  resolution: "@types/use-sync-external-store@npm:0.0.3"
+  checksum: 10c0/82824c1051ba40a00e3d47964cdf4546a224e95f172e15a9c62aa3f118acee1c7518b627a34f3aa87298a2039f982e8509f92bfcc18bea7c255c189c293ba547
   languageName: node
   linkType: hard
 
@@ -1861,6 +1889,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"immutable@npm:^4.3.4":
+  version: 4.3.7
+  resolution: "immutable@npm:4.3.7"
+  checksum: 10c0/9b099197081b22f6433003e34929da8ecddbbdc1474cdc8aa3b7669dee4adda349c06143de22def36016d1b6de5322b043eccd7a11db1dad2ca85dad4fff5435
+  languageName: node
+  linkType: hard
+
 "import-fresh@npm:^3.2.1":
   version: 3.3.0
   resolution: "import-fresh@npm:3.3.0"
@@ -2431,6 +2466,7 @@ __metadata:
     "@capacitor/core": "npm:^6.2.0"
     "@capacitor/ios": "npm:^6.2.0"
     "@eslint/js": "npm:^9.15.0"
+    "@redux-devtools/extension": "npm:^3.3.0"
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18.3.1"
     "@vitejs/plugin-react-swc": "npm:^3.7.1"
@@ -2440,6 +2476,8 @@ __metadata:
     globals: "npm:^15.12.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
+    react-redux: "npm:^9.1.2"
+    redux: "npm:^5.0.1"
     typescript: "npm:~5.7.2"
     typescript-eslint: "npm:^8.15.0"
     vite: "npm:^5.4.11"
@@ -2582,6 +2620,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-redux@npm:^9.1.2":
+  version: 9.1.2
+  resolution: "react-redux@npm:9.1.2"
+  dependencies:
+    "@types/use-sync-external-store": "npm:^0.0.3"
+    use-sync-external-store: "npm:^1.0.0"
+  peerDependencies:
+    "@types/react": ^18.2.25
+    react: ^18.0
+    redux: ^5.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    redux:
+      optional: true
+  checksum: 10c0/56ac98228e011b26e0202346af9c8dd408ad5ea8235d8761c8e05ea0953b8ca801cdf9d1f481fdec7b285d7f30ceef7238b46b3df7636ef77dd5c2ea8c5be5b2
+  languageName: node
+  linkType: hard
+
 "react@npm:^18.3.1":
   version: 18.3.1
   resolution: "react@npm:18.3.1"
@@ -2599,6 +2656,20 @@ __metadata:
     string_decoder: "npm:^1.1.1"
     util-deprecate: "npm:^1.0.1"
   checksum: 10c0/e37be5c79c376fdd088a45fa31ea2e423e5d48854be7a22a58869b4e84d25047b193f6acb54f1012331e1bcd667ffb569c01b99d36b0bd59658fb33f513511b7
+  languageName: node
+  linkType: hard
+
+"redux@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "redux@npm:5.0.1"
+  checksum: 10c0/b10c28357194f38e7d53b760ed5e64faa317cc63de1fb95bc5d9e127fab956392344368c357b8e7a9bedb0c35b111e7efa522210cfdc3b3c75e5074718e9069c
+  languageName: node
+  linkType: hard
+
+"regenerator-runtime@npm:^0.14.0":
+  version: 0.14.1
+  resolution: "regenerator-runtime@npm:0.14.1"
+  checksum: 10c0/1b16eb2c4bceb1665c89de70dcb64126a22bc8eb958feef3cd68fe11ac6d2a4899b5cd1b80b0774c7c03591dc57d16631a7f69d2daa2ec98100e2f29f7ec4cc4
   languageName: node
   linkType: hard
 
@@ -3076,6 +3147,15 @@ __metadata:
   dependencies:
     punycode: "npm:^2.1.0"
   checksum: 10c0/4ef57b45aa820d7ac6496e9208559986c665e49447cb072744c13b66925a362d96dd5a46c4530a6b8e203e5db5fe849369444440cb22ecfc26c679359e5dfa3c
+  languageName: node
+  linkType: hard
+
+"use-sync-external-store@npm:^1.0.0":
+  version: 1.2.2
+  resolution: "use-sync-external-store@npm:1.2.2"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 10c0/23b1597c10adf15b26ade9e8c318d8cc0abc9ec0ab5fc7ca7338da92e89c2536abd150a5891bf076836c352fdfa104fc7231fb48f806fd9960e0cbe03601abaf
   languageName: node
   linkType: hard
 
