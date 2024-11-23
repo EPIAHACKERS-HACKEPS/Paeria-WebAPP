@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">paeria</string>
+    <string name="title_activity_main">paeria</string>
+    <string name="package_name">com.paeria.app</string>
+    <string name="custom_url_scheme">com.paeria.app</string>
+</resources>
