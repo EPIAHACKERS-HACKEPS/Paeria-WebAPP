@@ -1,4 +1,4 @@
-import { RootState } from '../types/rootState.ts'
+import { RootState } from '../types'
 
 const selectFocusedParkingId = (state: RootState) => state.settings.focusedParkingId
 

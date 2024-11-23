@@ -1,4 +1,4 @@
-import { RootState } from '../types/rootState.ts'
+import { RootState } from '../types'
 
 const selectParkingById = (state: RootState, id: string) => {
   return state.parkings.find(parking => parking.id === id)

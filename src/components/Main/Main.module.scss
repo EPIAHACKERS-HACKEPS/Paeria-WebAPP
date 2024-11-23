@@ -1,15 +1,13 @@
 .Main {
-    color: #333;
-    background-color: #fff; // Light background
+    color: #c8c3bc;
+    background-color: #181a1b;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .title {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .stats {
@@ -24,7 +22,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #f9f9f9;
+    background: #1b1e1f;
     width: 100%;
 
     .occupied {
@@ -42,7 +40,7 @@
 
 .label {
     font-size: 16px;
-    color: #666;
+    color: #c8c3bc;
     margin-bottom: 5px;
 }
 
@@ -50,12 +48,18 @@
     margin: 10px 0px 20px 0px;
     font-size: 40px;
     font-weight: bold;
-    color: #333;
+    color: #c8c3bc;
 }
 .chart {
-    width: 400px;
-    height: 400px;
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 380px;
+    margin: 100px 0px;
+
+    canvas {
+        padding: 10px;
+    }
 }
 
 .map {
@@ -79,5 +83,7 @@
         width: 100%;
         height: 100%;
         margin: 0 auto;
+        flex-direction: column;
+        gap: 50px;
     }
 }

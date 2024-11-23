@@ -5,6 +5,7 @@ import Main from './components/Main/Main'
 import History from './components/History/History'
 import Prediction from './components/Prediction/Prediction'
 
+import './socket'
 
 function App() {
   return (

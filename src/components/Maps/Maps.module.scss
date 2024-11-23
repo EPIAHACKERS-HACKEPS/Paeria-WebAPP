@@ -1,0 +1,15 @@
+.Maps {
+    display: flex;
+    align-items: start;
+}
+.MapsContainer {
+    width: 90%;
+
+    iframe {
+        margin-left: 5%;
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+}

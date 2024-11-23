@@ -1,11 +1,7 @@
 import { Action } from 'redux'
-import {
-  CHANGE_PARKING_OCCUPATION,
-  isChangeParkingOccupationAction,
-  isSetParkingsAction,
-  SET_PARKINGS
-} from '../actions'
-import { RootState } from '../types/rootState.ts'
+
+import { RootState } from '../types'
+import { CHANGE_PARKING_STATUS, isChangeParkingOccupationAction, isSetParkingsAction, SET_PARKINGS } from '../actions'
 
 const initialState: RootState['parkings'] = []
 
@@ -17,7 +13,7 @@ const parkingsReducer = (state = initialState, action: Action) => {
 
       return action.parkings
     }
-    case CHANGE_PARKING_OCCUPATION: {
+    case CHANGE_PARKING_STATUS: {
       if (!isChangeParkingOccupationAction(action)) return state
 
       const { parkingId, occupation } = action
