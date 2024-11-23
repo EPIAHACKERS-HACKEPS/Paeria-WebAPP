@@ -4,6 +4,7 @@ import NavigationBar from "./components/NavigationBar/NavigationBar";
 import Main from './components/Main/Main';
 import History from './components/History/History';
 import Prediction from './components/Prediction/Prediction';
+import Maps from './components/Maps/Maps';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <div className='Main'>
         <NavigationBar />
         <Main />
+        <Maps />
         <History />
         <Prediction />
       </div>
