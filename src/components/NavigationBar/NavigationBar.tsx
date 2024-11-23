@@ -6,7 +6,7 @@ function NavigationBar() {
         <nav className={styles.navBar}>
             <a href="#home" className={styles.navLink}>
                 <div className={styles.home}>
-                    <img src="/logoPaeria.jpg" alt="Logo" style={{ height: '50px' }} />
+                    <img src="/LogoPaeria.png" alt="Logo" style={{ height: '50px' }} />
                 </div>
             </a>
             <a href="#about" className={styles.navLink}>Estadisticas</a>

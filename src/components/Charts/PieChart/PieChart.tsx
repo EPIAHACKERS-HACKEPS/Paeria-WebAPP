@@ -2,14 +2,19 @@ import React, { useEffect, useRef } from 'react';
 import styles from './PieChart.module.scss';
 import Chart from 'chart.js/auto';
 
-function NavigationBar() {
+interface PieChartProps {
+    dataArray: number[];
+    dataLabels: string[];
+    label: string
+}
+function NavigationBar({ dataArray, dataLabels, label }: PieChartProps) {
     const chartRef = useRef<HTMLCanvasElement>(null); // Strongly type the ref with HTMLCanvasElement
 
     const data = {
-        labels: ['Ocupat', 'Lliure'],
+        labels: dataLabels,
         datasets: [{
-            label: 'Capacitat',
-            data: [35, 15],
+            label: label,
+            data: dataArray,
             backgroundColor: [
                 'rgb(204, 0, 0)',
                 'rgb(0, 153, 0)'

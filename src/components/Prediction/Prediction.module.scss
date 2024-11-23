@@ -1,3 +1,26 @@
 .Prediction {
     color: black;
 }
+.PredictionContainer {
+    width: 95%;
+    margin-left: 2.5%;
+}
+.TextPrediction {
+    margin: 40px 0px;
+}
+.BarChart {
+    width: 80%;
+    align-items: center;
+}
+
+.BarChartContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ExplanationText {
+    font-size: 14px;
+    color: #c8c3bc;
+    margin-top: 10px 0px;
+    font-style: italic;
+}

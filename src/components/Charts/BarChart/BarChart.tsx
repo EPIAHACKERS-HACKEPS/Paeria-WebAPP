@@ -2,18 +2,21 @@ import React, { useEffect, useRef } from 'react';
 import styles from './BarChart.module.scss';
 import Chart from 'chart.js/auto';
 
-function BarChart() {
+interface BarChartProps {
+    dataArray: number[]; // Explicitly typing dataArray as an array of numbers
+    dataLabels: string[];
+    label: string
+    backgroundColor: string[]
+}
+function BarChart({ dataArray, dataLabels, label, backgroundColor }: BarChartProps) {
     const chartRef = useRef<HTMLCanvasElement>(null); // Strongly type the ref with HTMLCanvasElement
 
     const data = {
-        labels: ['Ocupat', 'Lliure'],
+        labels: dataLabels,
         datasets: [{
-            label: 'Capacitat',
-            data: [35, 15],
-            backgroundColor: [
-                'rgb(204, 0, 0)',
-                'rgb(0, 153, 0)'
-            ],
+            label: label,
+            data: dataArray,
+            backgroundColor: backgroundColor,
             hoverOffset: 4
         }]
     };
@@ -54,11 +57,17 @@ function BarChart() {
                                 ticks: {
                                     color: '#c8c3bc'
                                 },
+                                grid: {
+                                    color: 'rgba(255, 255, 255, 0)'
+                                }
                             },
                             x: {
                                 ticks: {
                                     color: '#c8c3bc'
                                 },
+                                grid: {
+                                    color: 'rgba(255, 255, 255, 0)'
+                                }
                             }
                         },
                     }

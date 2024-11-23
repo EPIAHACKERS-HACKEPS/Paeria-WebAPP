@@ -1,14 +1,15 @@
 .Maps {
+    width: 90%;
     display: flex;
     align-items: start;
 }
 .MapsContainer {
-    width: 90%;
-
+    width: 95%;
+    margin-left: 2.5%;
     iframe {
         margin-left: 5%;
         margin-top: 10px;
-        width: 100%;
+        width: 90%;
         display: flex;
         align-items: center;
     }
