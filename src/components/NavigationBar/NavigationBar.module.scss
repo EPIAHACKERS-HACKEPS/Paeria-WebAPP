@@ -65,6 +65,12 @@
     cursor: pointer;
 }
 
+.MenuIcon {
+    filter: invert(1);
+    width: 24px;
+    height: 24px;
+}
+
 @media (max-width: 768px) {
     .hamburger {
         display: block;
