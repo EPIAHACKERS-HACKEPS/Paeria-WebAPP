@@ -6,6 +6,7 @@ import { selectFocusedParkingId, selectParkingById } from '../../store/selectors
 
 function Maps() {
   const focusedParkingId = useSelector(selectFocusedParkingId)
+  // @ts-expect-error react-redux types are not working properly
   const parking = useSelector((state) => selectParkingById(state, focusedParkingId))
 
   return parking && (
@@ -18,6 +19,7 @@ function Maps() {
         </div>
         <div className={styles.MapIframe}>
           <iframe
+            title={parking.name}
             src={parking.url_embed}
             width="100%"
             height="450"
