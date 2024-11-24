@@ -25,3 +25,9 @@
     margin: 10px 0px 80px 0px;
     font-style: italic;
 }
+
+@media (max-width: 768px) {
+    .BarChart {
+        width: 100%;
+    }
+}

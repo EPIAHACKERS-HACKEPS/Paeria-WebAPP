@@ -7,7 +7,9 @@ import { selectFocusedParkingId, selectParkingById } from '../../store/selectors
 
 function Main() {
   const focusedParkingId = useSelector(selectFocusedParkingId)
+  // @ts-expect-error react-redux types are not working properly
   const parking = useSelector((state) => selectParkingById(state, focusedParkingId))
+
   return parking && (
     <div id="home" className={styles.Main}>
       <h1 className={styles.title}>{parking.name}</h1>

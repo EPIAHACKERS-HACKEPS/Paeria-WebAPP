@@ -11,7 +11,7 @@ function Main() {
                 <div className={styles.TextPrediction}>
                     <h1>Predicció</h1>
                     <p className={styles.ExplanationText}>
-                        En aquest gràfic es mostra <b>la mitjana de la predicció pels propers 30 dies</b> basada en la informació aïllada de cada hora.
+                        En aquest gràfic es mostra <b>la mitjana de la predicció pels propers dies</b> basada en la informació aïllada de cada hora dels ultims 30 dies.
                     </p>
                 </div>
                 <div className={styles.BarChartContainer}>
