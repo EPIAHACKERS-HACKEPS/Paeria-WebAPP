@@ -4,7 +4,7 @@ import { changeParkingOccupation, changeParkingStatus, focusParking, setParkings
 import { ParkingStatus, SOCKET_URL } from './constants'
 import { selectParkingById } from './store/selectors'
 import { store } from './store'
-import selectWatchedParkings from './store/selectors/selectWatchedParkings.ts'
+import selectWatchedParkings from './store/selectors/selectWatchedParkings'
 import { LocalNotifications } from '@capacitor/local-notifications'
 import { Parking } from './store/types'
 

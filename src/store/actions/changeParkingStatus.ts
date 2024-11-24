@@ -1,5 +1,5 @@
 import { Action } from 'redux'
-import { ParkingStatus } from '../../constants.ts'
+import { ParkingStatus } from '../../constants'
 
 export const CHANGE_PARKING_STATUS = 'CHANGE_PARKING_STATUS'
 

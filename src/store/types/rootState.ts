@@ -1,4 +1,5 @@
-import { Parking } from './parking.ts'
+import { Parking } from './parking'
+import { Prediction } from './prediction.ts'
 
 
 export interface RootState {
@@ -8,4 +9,7 @@ export interface RootState {
     isLoading: boolean
   },
   parkings: Parking[],
+  predictions: {
+    [parkingId: string]: Prediction[]
+  }
 }

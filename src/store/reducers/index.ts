@@ -1,2 +1,3 @@
-export { default as parkings } from './parkingsReducer.ts'
-export { default as settings } from './settingsReducer.ts'
+export { default as parkings } from './parkingsReducer'
+export { default as settings } from './settingsReducer'
+export { default as predictions } from './predictionsReducer'
