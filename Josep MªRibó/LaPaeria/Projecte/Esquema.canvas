@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"74edd4ba0d17b227","type":"text","text":"## CLIENT\n![[Pasted image 20241123234721.png]]","x":414,"y":-55,"width":253,"height":255,"color":"4"},
+		{"id":"3b40267f43ef54e8","type":"text","text":"## CLIENT\n![[Pasted image 20241123234721.png]]","x":414,"y":225,"width":253,"height":280,"color":"4"},
+		{"id":"8128260b96489ce8","type":"text","text":"## SERVER API\n![[Pasted image 20241123234448.png]]","x":-520,"y":-240,"width":273,"height":260,"color":"6"},
+		{"id":"737b7756704c6e8e","type":"text","text":"## RASPBERRY PI AGENTS (PARKING)\n\n\n![[Pasted image 20241123234431.png]]","x":361,"y":-470,"width":360,"height":360,"color":"3"},
+		{"id":"37029c8e71634dd6","type":"text","text":"## ChatBot\n\n![[Pasted image 20241124103333.png]]","x":140,"y":-920,"width":360,"height":360,"color":"3"}
+	],
+	"edges":[
+		{"id":"a88bcb91b6723de2","fromNode":"737b7756704c6e8e","fromSide":"left","toNode":"8128260b96489ce8","toSide":"right"},
+		{"id":"57a45db73cc256b0","fromNode":"74edd4ba0d17b227","fromSide":"left","toNode":"8128260b96489ce8","toSide":"right"},
+		{"id":"82770045c749dc8a","fromNode":"3b40267f43ef54e8","fromSide":"left","toNode":"8128260b96489ce8","toSide":"right"},
+		{"id":"99948f350a1e28bc","fromNode":"37029c8e71634dd6","fromSide":"bottom","toNode":"8128260b96489ce8","toSide":"right"}
+	]
+}
