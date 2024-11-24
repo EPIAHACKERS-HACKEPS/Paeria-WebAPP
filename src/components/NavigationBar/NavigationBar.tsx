@@ -3,7 +3,7 @@ import styles from './NavigationBar.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectFocusedParkingId, selectParkings } from '../../store/selectors'
 import { focusParking, unwatchParking, watchParking } from '../../store/actions'
-import selectWatchedParkings from '../../store/selectors/selectWatchedParkings.ts'
+import selectWatchedParkings from '../../store/selectors/selectWatchedParkings'
 
 function NavigationBar() {
   const [showFirstImage, setShowFirstImage] = useState(true)
@@ -36,7 +36,8 @@ function NavigationBar() {
       </a>
       <div className={styles.menuMobile}>
         <div className={styles.hamburger} onClick={toggleMenu}>
-          <img src="https://img.icons8.com/material-rounded/24/000000/menu--v1.png" alt="Menu"/>
+          <img src="https://img.icons8.com/material-rounded/24/000000/menu--v1.png" alt="Menu"
+          />
         </div>
         <div className={`${styles.navCenter} ${showMenu ? styles.show : ''}`}>
           <a href="#localitzation" className={styles.navLink}>Localització</a>
@@ -46,18 +47,18 @@ function NavigationBar() {
             Parkings
             <div className={`${styles.dropdownContent} ${showDropdown ? styles.showDropdown : ''}`}>
               {parkings.map((parking) => (
-                <button key={parking.parkingId} className={styles.dropdownItem}
-                        onClick={() => {
-                          toggleMenu()
-                          // @ts-expect-error react-redux types are not working properly
-                          dispatch(focusParking({ parkingId: parking.parkingId }))
-                        }}>{parking.name}</button>
+                <p key={parking.parkingId} className={styles.dropdownItem}
+                   onClick={() => {
+                     toggleMenu()
+                     // @ts-expect-error react-redux types are not working properly
+                     dispatch(focusParking({ parkingId: parking.parkingId }))
+                   }}>{parking.name}</p>
               ))}
             </div>
           </div>
         </div>
       </div>
-      <button onClick={() => {
+      <p onClick={() => {
         toggleImage()
         if (showFirstImage) {
           // @ts-expect-error react-redux types are not working properly
@@ -70,7 +71,7 @@ function NavigationBar() {
         <img
           src={showFirstImage ? 'https://img.icons8.com/?size=100&id=82754&format=png&color=8A123F' : 'https://img.icons8.com/?size=100&id=rW0l36JZZXst&format=png&color=8A123F'}
           alt="Notifications" style={{ height: '35px' }}/>
-      </button>
+      </p>
     </nav>
   )
 }

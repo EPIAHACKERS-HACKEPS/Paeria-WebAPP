@@ -1,2 +1,2 @@
-export * from './parking.ts'
-export * from './rootState.ts'
+export * from './parking'
+export * from './rootState'

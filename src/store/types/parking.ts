@@ -1,4 +1,4 @@
-import { ParkingStatus } from '../../constants.ts'
+import { ParkingStatus } from '../../constants'
 
 export interface Parking {
   name: string,

@@ -19,7 +19,12 @@
     font-size: 14px;
     color: #c8c3bc;
     font-style: italic;
-    margin-bottom: 40px;
+}
+
+.OcupationContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {

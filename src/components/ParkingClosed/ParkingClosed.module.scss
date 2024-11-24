@@ -1,0 +1,47 @@
+.ParkingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #181a1b;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 25%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.Container {
+    margin-top: 6%;
+    display: flex;
+    justify-content: center;
+}
+
+.ParkingImage {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.ParkingText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #c8c3bc;
+    margin-bottom: 10px;
+}
+
+.ParkingSubText {
+    font-size: 1rem;
+    color: #c8c3bc;
+}
+
+@media (max-width: 768px) {
+    .ParkingContainer {
+        width: 80%;
+        margin-top: 12%;
+    }
+}
