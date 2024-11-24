@@ -2,9 +2,9 @@ import { ParkingStatus } from '../../constants.ts'
 
 export interface Parking {
   name: string,
-  id: string,
+  parkingId: string,
   size: number,
   occupation: number,
   status: ParkingStatus,
-  map_url: string,
+  url_embed: string,
 }

@@ -3,10 +3,8 @@ import { Action } from 'redux'
 import {
   FOCUS_PARKING,
   isFocusParkingAction,
-  isSetIsLoadingAction,
   isUnwatchParkingAction,
   isWatchParkingAction,
-  SET_IS_LOADING,
   UNWATCH_PARKING,
   WATCH_PARKING
 } from '../actions'
@@ -40,11 +38,6 @@ const parkingsReducer = (state = initialState, action: Action) => {
       const { parkingId } = action
 
       return { ...state, watchedParkings: state.watchedParkings.filter(id => id !== parkingId) }
-    }
-    case SET_IS_LOADING: {
-      if (!isSetIsLoadingAction(action)) return state
-
-      return { ...state, isLoading: action.isLoading }
     }
     default:
       return state

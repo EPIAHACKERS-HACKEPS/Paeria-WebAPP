@@ -1,4 +1,4 @@
-export const SOCKET_URL = 'ws://localhost:5000'
+export const SOCKET_URL = 'wss://hackeps.ddns.net/socket'
 
 export enum ParkingStatus {
   Online = 'online',
