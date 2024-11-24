@@ -3,7 +3,6 @@ import styles from './History.module.scss';
 import { CompactTable } from '@table-library/react-table-library/compact';
 import { useTheme } from '@table-library/react-table-library/theme';
 import {
-    DEFAULT_OPTIONS,
     getTheme,
 } from '@table-library/react-table-library/mantine';
 import Separator from '../Separator/Separator';
@@ -122,13 +121,21 @@ const nodes = [
 const Component = () => {
     const data = { nodes };
 
-    const mantineTheme = getTheme(DEFAULT_OPTIONS);
-    const theme = useTheme(mantineTheme);
+    const theme = useTheme([
+        getTheme(),
+        {
+            Table: `
+            --data-table-library_grid-template-columns:  25% 25% 25% 25% minmax(150px, 1fr);
+          `,
+        },
+    ]);
 
     const COLUMNS = [
-        { label: 'Date and Time of Entry', renderCell: (item: any) => item.timeOfEntry },
-        { label: 'Parking Space Places Available', renderCell: (item: any) => item.placesAvailable },
-        { label: 'Car Entered or Left', renderCell: (item: any) => item.carMovement },
+        { label: `Data i hore d'entrada`, renderCell: (item: any) => item.timeOfEntry },
+        { label: 'Places de parking disponibles', renderCell: (item: any) => item.placesAvailable },
+        { label: 'Cotxe', renderCell: (item: any) => item.carMovement },
+        { label: 'Horari Major Ocupació', renderCell: (item: any) => item.carMovement },
+        { label: 'Horari Menor Ocupació', renderCell: (item: any) => item.carMovement },
     ];
 
     return (
@@ -136,9 +143,12 @@ const Component = () => {
             <div id='history' className={styles.HistoryContainer}>
                 <Separator />
                 <h1>Historial</h1>
+                <p className={styles.ExplanationText}>
+                    En aquest gràfic es presenta  <b>l'evolució històrica i les estadístiques</b>, basant-nos en l'anàlisi de les dades per hores.
+                </p>
                 <div className={styles.HistoryTableContainer}>
                     <div className={styles.HistoryTable}>
-                        <CompactTable columns={COLUMNS} data={data} theme={theme} layout={{ fixedHeader: true }} />
+                        <CompactTable columns={COLUMNS} data={data} theme={theme} layout={{ horizontalScroll: true, fixedHeader: true }} />
                     </div>
                 </div>
             </div>

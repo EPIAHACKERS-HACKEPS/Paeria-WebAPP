@@ -12,5 +12,23 @@
     overflow-y: auto;
     margin-bottom: 50px;
     border-radius: 6px;
-    width: 90%;
+    width: 100%;
+    overflow-x: auto;
+}
+.ExplanationText {
+    font-size: 14px;
+    color: #c8c3bc;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .HistoryTable {
+        width: 500px;
+        font-size: 12px;
+
+        table {
+            width: 1000px;
+        }
+    }
 }

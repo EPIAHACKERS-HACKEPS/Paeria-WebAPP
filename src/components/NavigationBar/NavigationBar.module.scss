@@ -1,23 +1,16 @@
-// NavigationBar.module.scss
-// .navBar {
-//     background-color: #181a1b;
-//     overflow: hidden;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     padding: 0px 10px;
-//     border-bottom: 1px solid #c8c3bc;
-// }
-.home {
+.home,
+.notifications {
     display: flex;
     align-items: center;
 }
+
 .navBar {
     display: flex;
+    justify-content: space-between; // Ensures space distribution
     align-items: center;
     border-bottom: 1px solid #c8c3bc;
     background-color: #181a1b;
-    padding: 0px 10px;
+    padding: 10px 20px;
 
     a {
         text-decoration: none;
@@ -26,6 +19,11 @@
     :hover {
         color: #827d78;
     }
+}
+
+.navCenter {
+    display: flex; // Aligns items in a row for the center part
+    justify-content: center; // Centers items horizontally
 }
 
 .navLink {
@@ -61,4 +59,53 @@
 
 .dropdownItem:hover {
     background-color: #f1f1f1;
+}
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navCenter {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #181a1b;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.5s ease, opacity 0.5s ease;
+        z-index: 100;
+    }
+
+    .navCenter.show {
+        max-height: 400px;
+        opacity: 1;
+    }
+
+    .navLink {
+        display: block;
+        padding: 15px;
+    }
+
+    .dropdownContent {
+        position: relative;
+        display: none;
+    }
+
+    .showDropdown {
+        display: block;
+    }
+}
+
+.notifications {
+    display: flex;
+    align-items: center;
 }
