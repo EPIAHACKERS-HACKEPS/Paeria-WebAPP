@@ -9,9 +9,10 @@ function NavigationBar() {
                     <img src="/LogoPaeria.png" alt="Logo" style={{ height: '50px' }} />
                 </div>
             </a>
-            <a href="#about" className={styles.navLink}>Estadisticas</a>
-            <a href="#about" className={styles.navLink}>Historial</a>
-            <a href="#contact" className={styles.navLink}>Predicciones</a>
+            <a href="#localitzation" className={styles.navLink}>Localització</a>
+            <a href="#Prediction" className={styles.navLink}>Predicció</a>
+            <a href="#history" className={styles.navLink}>Historial</a>
+            <a className={styles.navLink}>Parkings</a>
         </nav>
     );
 }

@@ -2,3 +2,15 @@
     width: 95%;
     margin-left: 2.5%;
 }
+.HistoryTableContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.HistoryTable {
+    max-height: 500px;
+    overflow-y: auto;
+    margin-bottom: 50px;
+    border-radius: 6px;
+    width: 90%;
+}

@@ -6,7 +6,7 @@ import BarChart from '../Charts/BarChart/BarChart';
 function Main() {
 
     return (
-        <div className={styles.Main}>
+        <div id='home' className={styles.Main}>
             <h1 className={styles.title}>Pàrquing Fugarolas</h1>
 
             <div className={styles.stats}>
@@ -28,9 +28,9 @@ function Main() {
 
             <div className={styles.chart}>
                 <PieChart dataArray={[35, 15]} dataLabels={['Ocupat', 'Lliure']} label='Capacitat' />
-                <BarChart dataArray={[35, 15]} dataLabels={['Ocupat', 'Lliure']} label='Capacitat' backgroundColor={[
-                    'rgb(204, 0, 0)',
-                    'rgb(0, 153, 0)'
+                <BarChart display={false} dataArray={[35, 15]} dataLabels={['Ocupat', 'Lliure']} label='Capacitat' backgroundColor={[
+                    '#8a123f',
+                    '#c8c3bc'
                 ]} />
             </div>
             {/* <div className={styles.map}>

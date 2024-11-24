@@ -11,6 +11,25 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        background: #c8c3bc;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #8a123f;
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #690e2f;
+    }
+    scroll-behavior: smooth;
 }
 body {
     margin: 0px;

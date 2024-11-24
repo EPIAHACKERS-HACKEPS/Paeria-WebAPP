@@ -17,8 +17,8 @@ function App() {
         <NavigationBar />
         <Main />
         <Maps />
-        <History />
         <Prediction />
+        <History />
       </div>
     </>
   )

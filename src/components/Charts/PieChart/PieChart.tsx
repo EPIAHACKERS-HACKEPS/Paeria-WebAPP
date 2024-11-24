@@ -16,8 +16,8 @@ function NavigationBar({ dataArray, dataLabels, label }: PieChartProps) {
             label: label,
             data: dataArray,
             backgroundColor: [
-                'rgb(204, 0, 0)',
-                'rgb(0, 153, 0)'
+                '#8a123f',
+                '#c8c3bc'
             ],
             hoverOffset: 4,
             borderWidth: 0,

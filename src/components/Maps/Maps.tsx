@@ -4,7 +4,7 @@ import Separator from '../Separator/Separator';
 
 function Maps() {
     return (
-        <div>
+        <div id='localitzation'>
             <div className={styles.MapsContainer}>
                 <Separator />
 
