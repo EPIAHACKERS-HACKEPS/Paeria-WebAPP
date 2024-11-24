@@ -1,123 +1,44 @@
 import * as React from 'react'
+import { useEffect } from 'react'
 import styles from './History.module.scss'
 import { CompactTable } from '@table-library/react-table-library/compact'
 import { useTheme } from '@table-library/react-table-library/theme'
 import { getTheme } from '@table-library/react-table-library/mantine'
 import Separator from '../Separator/Separator'
+import { useSelector } from 'react-redux'
+import { selectFocusedParkingId, selectParkingById } from '../../store/selectors'
+import fetchHistory from '../../methods/fetchHistory'
+import { History } from '../../store/types/history'
+import dayjs from 'dayjs'
+import selectHistoryById from '../../store/selectors/selectHistoryById'
 
-const nodes = [
-  {
-    id: 1,
-    timeOfEntry: '08:00 AM',
-    placesAvailable: 5,
-    carMovement: 'Entered'
-  },
-  {
-    id: 2,
-    timeOfEntry: '09:00 AM',
-    placesAvailable: 4,
-    carMovement: 'Left'
-  },
-  {
-    id: 3,
-    timeOfEntry: '10:00 AM',
-    placesAvailable: 6,
-    carMovement: 'Entered'
-  },
-  {
-    id: 4,
-    timeOfEntry: '08:00 AM',
-    placesAvailable: 5,
-    carMovement: 'Entered'
-  },
-  {
-    id: 5,
-    timeOfEntry: '09:00 AM',
-    placesAvailable: 4,
-    carMovement: 'Left'
-  },
-  {
-    id: 6,
-    timeOfEntry: '10:00 AM',
-    placesAvailable: 6,
-    carMovement: 'Entered'
-  },
-  {
-    id: 7,
-    timeOfEntry: '08:00 AM',
-    placesAvailable: 5,
-    carMovement: 'Entered'
-  },
-  {
-    id: 8,
-    timeOfEntry: '09:00 AM',
-    placesAvailable: 4,
-    carMovement: 'Left'
-  },
-  {
-    id: 9,
-    timeOfEntry: '10:00 AM',
-    placesAvailable: 6,
-    carMovement: 'Entered'
-  },
-  {
-    id: 10,
-    timeOfEntry: '08:00 AM',
-    placesAvailable: 5,
-    carMovement: 'Entered'
-  },
-  {
-    id: 11,
-    timeOfEntry: '09:00 AM',
-    placesAvailable: 4,
-    carMovement: 'Left'
-  },
-  {
-    id: 12,
-    timeOfEntry: '10:00 AM',
-    placesAvailable: 6,
-    carMovement: 'Entered'
-  },
-  {
-    id: 13,
-    timeOfEntry: '08:00 AM',
-    placesAvailable: 5,
-    carMovement: 'Entered'
-  },
-  {
-    id: 14,
-    timeOfEntry: '09:00 AM',
-    placesAvailable: 4,
-    carMovement: 'Left'
-  },
-  {
-    id: 15,
-    timeOfEntry: '10:00 AM',
-    placesAvailable: 6,
-    carMovement: 'Entered'
-  },
-  {
-    id: 16,
-    timeOfEntry: '08:00 AM',
-    placesAvailable: 5,
-    carMovement: 'Entered'
-  },
-  {
-    id: 17,
-    timeOfEntry: '09:00 AM',
-    placesAvailable: 4,
-    carMovement: 'Left'
-  },
-  {
-    id: 18,
-    timeOfEntry: '10:00 AM',
-    placesAvailable: 6,
-    carMovement: 'Entered'
-  }
-]
 
 const Component = () => {
-  const data = { nodes }
+  const focusedParkingId = useSelector(selectFocusedParkingId)
+  // @ts-expect-error react-redux types are not working properly
+  const parking = useSelector((state) => selectParkingById(state, focusedParkingId))
+
+  // @ts-expect-error react-redux types are not working properly
+  const history = useSelector((state) => selectHistoryById(state, focusedParkingId))
+
+  const [moreOccupied, setMoreOccupied] = React.useState<string | null>(null)
+  const [lessOccupied, setLessOccupied] = React.useState<string | null>(null)
+
+  useEffect(() => {
+    if (history.length > 0) {
+      const mostOccupied = history.reduce((prev, current) => (prev.occupation > current.occupation) ? prev : current)
+      const lessOccupied = history.reduce((prev, current) => (prev.occupation < current.occupation) ? prev : current)
+
+      setMoreOccupied(dayjs(mostOccupied.time).format('HH') + ':00')
+      setLessOccupied(dayjs(lessOccupied.time).format('HH') + ':00')
+    }
+  }, [history])
+
+  useEffect(() => {
+    if (parking) {
+      fetchHistory(parking.parkingId)
+    }
+  }, [focusedParkingId])
 
   const theme = useTheme([
     getTheme(),
@@ -129,32 +50,30 @@ const Component = () => {
   ])
 
   const COLUMNS = [
-    { label: `Data i hore d'entrada`, renderCell: (item: any) => item.timeOfEntry },
-    { label: 'Places de parking disponibles', renderCell: (item: any) => item.placesAvailable },
-    { label: 'Cotxe', renderCell: (item: any) => item.carMovement }
+    { label: `Data i hore d'entrada`, renderCell: (item: History) => dayjs(item.time).format('DD/MM/YYYY HH:mm') },
+    { label: 'Places de parking disponibles', renderCell: (item: History) => item.occupation },
+    { label: 'Cotxe', renderCell: (item: History) => item.access ? 'Entered' : 'Left' }
   ]
 
   return (
-    <>
-      <div id="history" className={styles.HistoryContainer}>
-        <Separator/>
-        <h1>Historial</h1>
-        <p className={styles.ExplanationText}>
-          En aquest gràfic es presenta <b>l'evolució històrica i les estadístiques</b>, basant-nos en l'anàlisi de les
-          dades per hores.
-        </p>
-        <div className={styles.OcupationContainer}>
-          <p>Horari Major Ocupació: <b>17:00 - 19:00</b></p>
-          <p>Horari Menor Ocupació: <b>2:00 - 3:00</b></p>
-        </div>
-        <div className={styles.HistoryTableContainer}>
-          <div className={styles.HistoryTable}>
-            <CompactTable columns={COLUMNS} data={data} theme={theme}
-                          layout={{ horizontalScroll: true, fixedHeader: true }}/>
-          </div>
+    <div id="history" className={styles.HistoryContainer}>
+      <Separator/>
+      <h1>Historial</h1>
+      <p className={styles.ExplanationText}>
+        En aquest gràfic es presenta <b>l'evolució històrica i les estadístiques</b>, basant-nos en l'anàlisi de les
+        dades per hores.
+      </p>
+      <div className={styles.OcupationContainer}>
+        <p>Horari Major Ocupació: <b>{moreOccupied}</b></p>
+        <p>Horari Menor Ocupació: <b>{lessOccupied}</b></p>
+      </div>
+      <div className={styles.HistoryTableContainer}>
+        <div className={styles.HistoryTable}>
+          <CompactTable columns={COLUMNS} data={{ nodes: history }} theme={theme}
+                        layout={{ horizontalScroll: true, fixedHeader: true }}/>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

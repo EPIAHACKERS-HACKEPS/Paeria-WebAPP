@@ -4,8 +4,8 @@ import BarChart from '../Charts/BarChart/BarChart'
 import Separator from '../Separator/Separator'
 import { useSelector } from 'react-redux'
 import { selectFocusedParkingId, selectParkingById } from '../../store/selectors'
-import fetchPrediction from '../../methods/fetchPrediction.ts'
-import selectPredictionsById from '../../store/selectors/selectPredictionsById.ts'
+import fetchPrediction from '../../methods/fetchPrediction'
+import selectPredictionsById from '../../store/selectors/selectPredictionsById'
 
 function Main() {
   const focusedParkingId = useSelector(selectFocusedParkingId)

@@ -1,6 +1,6 @@
 import { store } from '../store'
-import { setParkingPredictions } from '../store/actions/setParkingPredictions.ts'
-import { Prediction } from '../store/types/prediction.ts'
+import { setParkingPredictions } from '../store/actions/setParkingPredictions'
+import { Prediction } from '../store/types/prediction'
 
 const voidPredictions = [] as Prediction[]
 

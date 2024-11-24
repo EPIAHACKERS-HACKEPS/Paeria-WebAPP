@@ -1,6 +1,6 @@
 import { Parking } from './parking'
-import { Prediction } from './prediction.ts'
-
+import { Prediction } from './prediction'
+import { History } from './history'
 
 export interface RootState {
   settings: {
@@ -11,5 +11,8 @@ export interface RootState {
   parkings: Parking[],
   predictions: {
     [parkingId: string]: Prediction[]
+  },
+  history: {
+    [parkingId: string]: History[]
   }
 }

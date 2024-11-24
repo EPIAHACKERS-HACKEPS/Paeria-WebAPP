@@ -8,14 +8,14 @@ import Maps from './components/Maps/Maps'
 import ParkingClosed from './components/ParkingClosed/ParkingClosed'
 import { selectFocusedParkingId, selectParkingById } from './store/selectors'
 import { useSelector } from 'react-redux'
-import { ParkingStatus } from './constants.ts'
+import { ParkingStatus } from './constants'
 
 
 function App() {
   const focusedParkingId = useSelector(selectFocusedParkingId)
   // @ts-expect-error react-redux types are not working properly
   const parking = useSelector((state) => selectParkingById(state, focusedParkingId))
-  
+
   return (
     <div className="Main">
       <NavigationBar/>

@@ -1,5 +1,5 @@
 import { RootState } from '../types'
-import { Prediction } from '../types/prediction.ts'
+import { Prediction } from '../types/prediction'
 
 const voidPredictions = [] as Prediction[]
 

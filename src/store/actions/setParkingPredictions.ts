@@ -1,5 +1,5 @@
 import { Action } from 'redux'
-import { Prediction } from '../types/prediction.ts'
+import { Prediction } from '../types/prediction'
 
 export const SET_PARKING_PREDICTIONS = 'SET_PARKING_PREDICTIONS'
 
