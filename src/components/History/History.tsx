@@ -1,20 +1,149 @@
-import React from 'react';
+import * as React from 'react';
 import styles from './History.module.scss';
+import { CompactTable } from '@table-library/react-table-library/compact';
+import { useTheme } from '@table-library/react-table-library/theme';
+import {
+    DEFAULT_OPTIONS,
+    getTheme,
+} from '@table-library/react-table-library/mantine';
 import Separator from '../Separator/Separator';
-import BarChart from '../Charts/BarChart/BarChart';
 
-function Main() {
+const nodes = [
+    {
+        id: 1,
+        timeOfEntry: '08:00 AM',
+        placesAvailable: 5,
+        carMovement: 'Entered',
+    },
+    {
+        id: 2,
+        timeOfEntry: '09:00 AM',
+        placesAvailable: 4,
+        carMovement: 'Left',
+    },
+    {
+        id: 3,
+        timeOfEntry: '10:00 AM',
+        placesAvailable: 6,
+        carMovement: 'Entered',
+    },
+    {
+        id: 4,
+        timeOfEntry: '08:00 AM',
+        placesAvailable: 5,
+        carMovement: 'Entered',
+    },
+    {
+        id: 5,
+        timeOfEntry: '09:00 AM',
+        placesAvailable: 4,
+        carMovement: 'Left',
+    },
+    {
+        id: 6,
+        timeOfEntry: '10:00 AM',
+        placesAvailable: 6,
+        carMovement: 'Entered',
+    },
+    {
+        id: 7,
+        timeOfEntry: '08:00 AM',
+        placesAvailable: 5,
+        carMovement: 'Entered',
+    },
+    {
+        id: 8,
+        timeOfEntry: '09:00 AM',
+        placesAvailable: 4,
+        carMovement: 'Left',
+    },
+    {
+        id: 9,
+        timeOfEntry: '10:00 AM',
+        placesAvailable: 6,
+        carMovement: 'Entered',
+    },
+    {
+        id: 7,
+        timeOfEntry: '08:00 AM',
+        placesAvailable: 5,
+        carMovement: 'Entered',
+    },
+    {
+        id: 8,
+        timeOfEntry: '09:00 AM',
+        placesAvailable: 4,
+        carMovement: 'Left',
+    },
+    {
+        id: 9,
+        timeOfEntry: '10:00 AM',
+        placesAvailable: 6,
+        carMovement: 'Entered',
+    },
+    {
+        id: 7,
+        timeOfEntry: '08:00 AM',
+        placesAvailable: 5,
+        carMovement: 'Entered',
+    },
+    {
+        id: 8,
+        timeOfEntry: '09:00 AM',
+        placesAvailable: 4,
+        carMovement: 'Left',
+    },
+    {
+        id: 9,
+        timeOfEntry: '10:00 AM',
+        placesAvailable: 6,
+        carMovement: 'Entered',
+    },
+    {
+        id: 7,
+        timeOfEntry: '08:00 AM',
+        placesAvailable: 5,
+        carMovement: 'Entered',
+    },
+    {
+        id: 8,
+        timeOfEntry: '09:00 AM',
+        placesAvailable: 4,
+        carMovement: 'Left',
+    },
+    {
+        id: 9,
+        timeOfEntry: '10:00 AM',
+        placesAvailable: 6,
+        carMovement: 'Entered',
+    },
+];
+
+const Component = () => {
+    const data = { nodes };
+
+    const mantineTheme = getTheme(DEFAULT_OPTIONS);
+    const theme = useTheme(mantineTheme);
+
+    const COLUMNS = [
+        { label: 'Date and Time of Entry', renderCell: (item: any) => item.timeOfEntry },
+        { label: 'Parking Space Places Available', renderCell: (item: any) => item.placesAvailable },
+        { label: 'Car Entered or Left', renderCell: (item: any) => item.carMovement },
+    ];
+
     return (
-        <div>
-            <div className={styles.HistoryContainer}>
+        <>
+            <div id='history' className={styles.HistoryContainer}>
                 <Separator />
                 <h1>Historial</h1>
-                <BarChart dataArray={[5, 3, 3, 3, 6, 7, 10, 15, 18, 19, 20, 21, 25, 27, 23, 20, 21, 25, 26, 22, 20, 15, 13, 12]} dataLabels={["00:00", "01:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]} label={'Ocupació'} backgroundColor={[
-                    '#003166',
-                ]} />
+                <div className={styles.HistoryTableContainer}>
+                    <div className={styles.HistoryTable}>
+                        <CompactTable columns={COLUMNS} data={data} theme={theme} layout={{ fixedHeader: true }} />
+                    </div>
+                </div>
             </div>
-        </div>
+        </>
     );
-}
+};
 
-export default Main;
+export default Component;

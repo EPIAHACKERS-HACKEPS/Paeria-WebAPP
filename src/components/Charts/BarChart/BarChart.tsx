@@ -7,8 +7,9 @@ interface BarChartProps {
     dataLabels: string[];
     label: string
     backgroundColor: string[]
+    display: boolean
 }
-function BarChart({ dataArray, dataLabels, label, backgroundColor }: BarChartProps) {
+function BarChart({ dataArray, dataLabels, label, backgroundColor, display }: BarChartProps) {
     const chartRef = useRef<HTMLCanvasElement>(null); // Strongly type the ref with HTMLCanvasElement
 
     const data = {
@@ -40,12 +41,14 @@ function BarChart({ dataArray, dataLabels, label, backgroundColor }: BarChartPro
                                     },
                                     color: '#c8c3bc'
                                 },
+                                display: display
 
                             },
                             tooltip: {
                                 bodyFont: {
                                     size: 16
                                 },
+                                displayColors: false,
                                 titleFont: {
                                     size: 16
                                 }
