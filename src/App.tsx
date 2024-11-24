@@ -9,8 +9,6 @@ import Maps from './components/Maps/Maps';
 
 function App() {
 
-  // const [count, setCount] = useState(0)
-
   return (
     <>
       <div className='Main'>
