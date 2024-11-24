@@ -16,7 +16,8 @@ function NavigationBar() {
             </a>
             <div className={styles.menuMobile}>
                 <div className={styles.hamburger} onClick={toggleMenu}>
-                    <img src="https://img.icons8.com/material-rounded/24/000000/menu--v1.png" alt="Menu" />
+                    <img src="https://img.icons8.com/material-rounded/24/000000/menu--v1.png" alt="Menu" className={styles.MenuIcon}
+                    />
                 </div>
                 <div className={`${styles.navCenter} ${showMenu ? styles.show : ''}`}>
                     <a href="#localitzation" className={styles.navLink}>Localització</a>

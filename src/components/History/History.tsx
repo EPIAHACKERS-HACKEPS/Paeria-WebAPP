@@ -134,8 +134,6 @@ const Component = () => {
         { label: `Data i hore d'entrada`, renderCell: (item: any) => item.timeOfEntry },
         { label: 'Places de parking disponibles', renderCell: (item: any) => item.placesAvailable },
         { label: 'Cotxe', renderCell: (item: any) => item.carMovement },
-        { label: 'Horari Major Ocupació', renderCell: (item: any) => item.carMovement },
-        { label: 'Horari Menor Ocupació', renderCell: (item: any) => item.carMovement },
     ];
 
     return (
@@ -146,6 +144,10 @@ const Component = () => {
                 <p className={styles.ExplanationText}>
                     En aquest gràfic es presenta  <b>l'evolució històrica i les estadístiques</b>, basant-nos en l'anàlisi de les dades per hores.
                 </p>
+                <div className={styles.OcupationContainer}>
+                    <p>Horari Major Ocupació: <b>17:00 - 19:00</b> </p>
+                    <p>Horari Menor Ocupació: <b>2:00 - 3:00</b> </p>
+                </div>
                 <div className={styles.HistoryTableContainer}>
                     <div className={styles.HistoryTable}>
                         <CompactTable columns={COLUMNS} data={data} theme={theme} layout={{ horizontalScroll: true, fixedHeader: true }} />
