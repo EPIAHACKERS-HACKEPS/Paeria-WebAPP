@@ -5,6 +5,7 @@ import {
   CHANGE_PARKING_OCCUPATION,
   CHANGE_PARKING_STATUS,
   isChangeParkingOccupationAction,
+  isChangeParkingStatusAction,
   isSetParkingsAction,
   SET_PARKINGS
 } from '../actions'
@@ -20,12 +21,12 @@ const parkingsReducer = (state = initialState, action: Action) => {
       return action.parkings
     }
     case CHANGE_PARKING_STATUS: {
-      if (!isChangeParkingOccupationAction(action)) return state
+      if (!isChangeParkingStatusAction(action)) return state
 
-      const { parkingId, occupation } = action
+      const { parkingId, status } = action
 
       return state.map(parking => {
-        if (parking.parkingId === parkingId) return { ...parking, occupation }
+        if (parking.parkingId === parkingId) return { ...parking, status }
         return parking
       })
     }
