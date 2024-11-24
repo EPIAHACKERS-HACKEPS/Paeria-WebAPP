@@ -50,7 +50,7 @@ function NavigationBar({ dataArray, dataLabels, label }: PieChartProps) {
                   label: function (tooltipItem) {
                     let sum = 0
                     const dataArr = tooltipItem.dataset.data
-                    dataArr.map(data => {
+                    dataArray.forEach(data => {
                       sum += data
                     })
                     const percentage = ((tooltipItem.raw as number) * 100 / sum).toFixed(2) + '%'
@@ -77,7 +77,7 @@ function NavigationBar({ dataArray, dataLabels, label }: PieChartProps) {
   }, [data])
 
   return (
-    <canvas className={styles.PieChart} ref={chartRef}/>
+    <canvas className={styles.PieChart} ref={chartRef} />
   )
 }
 
